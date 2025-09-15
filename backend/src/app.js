@@ -3,6 +3,7 @@ import rateLimit from "express-rate-limit";
 import shipRoutes from "./routes/shipRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import logger from "./utils/logger.js";
+import cors from "cors"
 
 import dotenv from "dotenv";
 
@@ -10,6 +11,10 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+app.use(cors({
+  origin: "*",
+}));
 
 // Rate limiter
 const limiter = rateLimit({
