@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://shipping-management-oell.onrender.com",
+  baseURL: "https://shipping-management-1.onrender.com",
 });
 
 // Attach token if available

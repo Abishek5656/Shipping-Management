@@ -38,8 +38,8 @@ export const addShip = async (req, res) => {
   }
 
   try {
-    const { name, email } = req.body;
-    const newShip = new Ship({ name, email });
+    const { name, email, type } = req.body;
+    const newShip = new Ship({ name, email, shipType: type  });
     await newShip.save();
     logger.info(`New ship added: ${name}`);
     res.status(201).json(newShip);
