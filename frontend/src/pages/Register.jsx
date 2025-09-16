@@ -18,46 +18,43 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white shadow-lg p-6 rounded w-80 space-y-3"
-      >
-        <h2 className="text-xl font-bold">Register</h2>
-        <input
-          type="text"
-          placeholder="Username"
-          value={form.username}
-          onChange={(e) => setForm({ ...form, username: e.target.value })}
-          className="border w-full px-3 py-2 rounded"
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className="border w-full px-3 py-2 rounded"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={(e) => setForm({ ...form, password: e.target.value })}
-          className="border w-full px-3 py-2 rounded"
-          required
-        />
-        <button className="bg-green-600 text-white w-full py-2 rounded">
-          Register
-        </button>
-        <p className="text-sm text-gray-600 text-center">
-          Already have an account?{" "}
-          <Link to="/login" className="text-blue-500 underline">
+       <div className="container-fluid d-flex justify-content-center align-items-center bg-light" 
+    style={{  
+    width: "100vw", 
+    height: "100vh",
+    border:"2px solid red"}}>
+      <div className="card shadow-lg p-4" style={{ maxWidth: "400px", width: "100%" }}>
+        <h2 className="text-center mb-4">Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <input
+              type="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
+              className="form-control"
+              required
+            />
+          </div>
+          <button className="btn btn-primary w-100 mb-3">Register</button>
+        </form>
+        <p className="text-center text-muted">
+          have an account?{" "}
+          <Link to="/login" className="text-decoration-none">
             Login
           </Link>
         </p>
-      </form>
+      </div> 
     </div>
   );
 }

@@ -18,7 +18,11 @@ export default function Login() {
   };
 
   return (
-    <div className="container-fluid mx d-flex justify-content-center align-items-center bg-light" style={{ maxWidth: "100vh", border:"1px solid red"}}>
+    <div className="container-fluid d-flex justify-content-center align-items-center bg-light" 
+    style={{  
+    width: "100vw", 
+    height: "100vh",
+    border:"2px solid red"}}>
       <div className="card shadow-lg p-4" style={{ maxWidth: "400px", width: "100%" }}>
         <h2 className="text-center mb-4">Login</h2>
         <form onSubmit={handleSubmit}>
@@ -50,7 +54,7 @@ export default function Login() {
             Register
           </Link>
         </p>
-      </div>
+      </div> 
     </div>
   );
 }
