@@ -68,8 +68,22 @@
 
 import React from "react";
 import { Search, LogOut } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Navbar({ search, setSearch }) {
+
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    // ✅ Remove token (adjust based on where you store it)
+    localStorage.removeItem("token");
+    sessionStorage.removeItem("token");
+
+    // ✅ Redirect to login
+    navigate("/login");
+  };
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow">
       <div className="container">
@@ -105,7 +119,11 @@ export default function Navbar({ search, setSearch }) {
 
           {/* Logout Button */}
           <div className="d-flex mt-3 mt-lg-0">
-            <button className="btn btn-outline-light d-flex align-items-center">
+            <button className="btn btn-outline-light d-flex align-items-center"
+              onClick={handleLogout}
+            >
+
+
               <LogOut size={18} className="me-1" />
               Logout
             </button>

@@ -101,8 +101,8 @@ export default function ShipCard({ ship, onDelete }) {
             </div>
             <div className="d-flex align-items-center">
               <i className="bi bi-people-fill text-muted me-2"></i>
-              <span className="text-muted">Capacity:</span>
-              <span className="ms-2">{ship.capacity || "N/A"}</span>
+              <span className="text-muted">Email:</span>
+              <span className="ms-2">{ship.email || "N/A"}</span>
             </div>
           </div>
 
