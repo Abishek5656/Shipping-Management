@@ -122,8 +122,6 @@ export default function Navbar({ search, setSearch }) {
             <button className="btn btn-outline-light d-flex align-items-center"
               onClick={handleLogout}
             >
-
-
               <LogOut size={18} className="me-1" />
               Logout
             </button>

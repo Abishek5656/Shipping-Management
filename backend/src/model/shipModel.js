@@ -13,7 +13,7 @@ const shipSchema = new mongoose.Schema({
     required: [true, "Email is required"],
     match: [/.+\@.+\..+/, "Please provide a valid email"],
   },
-  shipType: {
+  type: {
     type: String,
   },
   createdAt: {
