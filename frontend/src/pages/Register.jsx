@@ -207,6 +207,7 @@ export default function Register() {
       if (data?.token) {
         localStorage.setItem("token", data.token);
         navigate("/");
+        window.location.reload();
       } else {
         setError("Unexpected response from server");
       }
