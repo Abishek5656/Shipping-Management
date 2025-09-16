@@ -24,7 +24,7 @@ const [token, setToken] = useState(null);
       <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={token ? <Register /> : <Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/" element={token ? <Dashboard /> : <Login />} />
           <Route path="/add" element={token ? <AddShip /> : <Login />} />
           <Route path="/edit/:id" element={token ? <EditShip /> : <Login />} />
