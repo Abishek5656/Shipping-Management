@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState  } from "react";
 
 // Lazy imports
 const Login = lazy(() => import("./pages/Login"));
@@ -13,7 +13,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function App() {
-  const token = localStorage.getItem("token");
+const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+  }, [])
+
   return (
     <BrowserRouter>
       <Suspense fallback={<div className="text-center mt-5">Loading...</div>}>

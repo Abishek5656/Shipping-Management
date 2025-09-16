@@ -8,21 +8,37 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // try {
+    //   // const { data } = await login(form);
+    //   // localStorage.setItem("token", data.token);
+    //   navigate("/");
+    // } catch (err) {
+    //   alert("Invalid credentials");
+    // }
     try {
       const { data } = await login(form);
-      localStorage.setItem("token", data.token);
-      navigate("/");
+      console.log("Login response:", data);
+
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+        navigate("/");
+        window.location.reload(); 
+      } else {
+        alert("No token received!");
+      }
     } catch (err) {
+      console.error(err);
       alert("Invalid credentials");
     }
   };
 
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center bg-light" 
-    style={{  
-    width: "100vw", 
-    height: "100vh",
-    border:"2px solid red"}}>
+    <div className="container-fluid d-flex justify-content-center align-items-center bg-light"
+      style={{
+        width: "100vw",
+        height: "100vh",
+        border: "2px solid red"
+      }}>
       <div className="card shadow-lg p-4" style={{ maxWidth: "400px", width: "100%" }}>
         <h2 className="text-center mb-4">Login</h2>
         <form onSubmit={handleSubmit}>
@@ -54,7 +70,7 @@ export default function Login() {
             Register
           </Link>
         </p>
-      </div> 
+      </div>
     </div>
   );
 }
